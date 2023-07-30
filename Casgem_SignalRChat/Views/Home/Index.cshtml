@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="row p-1">
+        <div class="col-2"><strong>Kullanıcı İsmi:</strong></div>
+        <div class="col-5"><input type="text" id="userInput" /></div>
+    </div>
+    <div class="row p-1">
+        <div class="col-2"><strong>Mesajınız:</strong></div>
+        <div class="col-5"><input type="text" class="w-100" id="messageInput" /></div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6 text-end">
+            <input type="button" id="sendButton" value="Mesaj Gönder" class="btn btn-orange" />
+        </div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6">
+            <hr style="border-color: #00cbff;" />
+        </div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6">
+            <ul id="messagesList"></ul>
+        </div>
+    </div>
+</div>
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        max-width: 600px;
+        background-color: #f9f9f9;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .col-2, .col-5 {
+        padding: 5px;
+    }
+
+    input[type="text"], input[type="button"] {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    /* Eski stiller kaldırıldı */
+
+    #messagesList {
+        list-style-type: none;
+        padding: 0;
+    }
+
+        #messagesList li {
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+    /* Yeni buton rengi */
+    .btn-orange {
+        background-color: orange;
+        color: #fff;
+        cursor: pointer;
+    }
+</style>
